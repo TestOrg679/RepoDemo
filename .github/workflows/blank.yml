@@ -22,8 +22,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - name: test
+        env:
+          super_secret: ${{ secrets.REPODEMOSECRET }}
+     
         
         with: # Set the secret as an input
           super_secret: ${{ secrets.REPODEMOSECRET }}
