@@ -5,9 +5,9 @@ on:
     - dev/*
     
 jobs: 
-      test:
-        name: test code base
+  test:
+    name: test code base
       
-runs-on: ubuntu-latest
-steps:
-    - uses: actions/checkout@v2
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
