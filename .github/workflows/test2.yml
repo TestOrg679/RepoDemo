@@ -1,10 +1,12 @@
 on:
-  push
+  workflow_dispatch
     
 jobs: 
   test:
     name: test code base
       
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
+    steps:         
+      - uses: actions/setup-node@v1
+        with:
+         node-version: '10.x'
