@@ -1,9 +1,7 @@
 on:
-  push:
+  pull_request:
     branches:
     - main
-    - dev/*
-    - release/*
     
 jobs: 
   test:
