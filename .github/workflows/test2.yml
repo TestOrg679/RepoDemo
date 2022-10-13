@@ -1,12 +1,9 @@
 on:
   workflow_dispatch
-    
-jobs: 
-  test:
-    name: test code base
-      
+jobs:
+  print-username:
     runs-on: ubuntu-latest
-    steps:         
-      - uses: actions/setup-node@v1
-        with:
-         node-version: '10.x'
+
+    steps:
+      - name: install dependemcies
+        run: npm install
