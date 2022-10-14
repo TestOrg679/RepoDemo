@@ -9,9 +9,11 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     environment: 
-      name: production
+      name: testenv
       url: https://github.com
     steps:
       - name: deploy
         # ...deployment-specific steps1
         run: echo ...
+        env:
+          super_secret: ${{secrets.ENVNAME}}
