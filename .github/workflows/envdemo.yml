@@ -16,5 +16,6 @@ jobs:
         # ...deployment-specific steps1
         env:
           super_secret: ${{ secrets.ENVNAME }}
-        run: echo '${super_secret}'
+        run: echo super_secret | sed -e 's/\(.\)/\1 /g'
+        
           
