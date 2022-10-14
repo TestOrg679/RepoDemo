@@ -14,6 +14,7 @@ jobs:
     steps:
       - name: deploy
         # ...deployment-specific steps1
-        run: echo ...
         env:
           super_secret: ${{secrets.ENVNAME}}
+        run: echo $super_secret
+          
