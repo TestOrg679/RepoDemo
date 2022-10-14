@@ -16,6 +16,8 @@ jobs:
         # ...deployment-specific steps1
         env:
           super_secret: ${{ secrets.ENVNAME }}
-        run: echo super_secret | sed -e 's/\(.\)/\1 /g'
+        #run: echo super_secret 
+        if: ${{'value1' == super_secret}}
+        run: echo 'true'
         
           
