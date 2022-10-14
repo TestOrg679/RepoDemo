@@ -17,7 +17,7 @@ jobs:
         env:
           super_secret: ${{ secrets.ENVNAME }}
         #run: echo super_secret 
-        if: ${{'value1' == super_secret}}
+        if: ${{'value1' == $super_secret}}
         run: echo 'true'
         
           
