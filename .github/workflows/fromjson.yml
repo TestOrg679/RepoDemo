@@ -1,5 +1,5 @@
 name: print
-on: push
+on: workflow_dispatch
 env:
   continue: true
   time: 3
