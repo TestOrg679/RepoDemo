@@ -1,0 +1,11 @@
+on:
+  workflow_dispatch
+  
+jobs:
+  printusername:
+    runs-on: ubuntu-latest
+    steps:    
+      - name: display path
+        run: echo $PATH
+        shell: bash
+      
