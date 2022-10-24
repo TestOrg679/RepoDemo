@@ -1,0 +1,12 @@
+on:
+  workflow_dispatch:
+    
+jobs:
+  callworkflow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print the input name to STDOUT from called
+        uses: ./.github/workflows/workflowcall.yml@main
+      with:
+        username:'hellop'
