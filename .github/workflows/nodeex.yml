@@ -1,0 +1,10 @@
+on:
+  workflow_dispatch
+  
+job:
+  nodeexample:
+  runs-on: ubuntu-latest
+- name: Setup Node
+  uses: actions/setup-node@v1
+  with:
+    node-version: '10.x'
