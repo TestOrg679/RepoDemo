@@ -7,6 +7,6 @@ jobs:
 
     steps:
       - name: Print the input name to STDOUT from called
-        uses: ./.github/workflows/workflowcall.yml@main
+        uses: ./.github/workflows/workflowcall.yml
         with:
           username: 'hellop'
