@@ -8,5 +8,5 @@ jobs:
     steps:
       - name: Print the input name to STDOUT from called
         uses: ./.github/workflows/workflowcall.yml@main
-      with:
-        username:'hellop'
+        with:
+          username: 'hellop'
