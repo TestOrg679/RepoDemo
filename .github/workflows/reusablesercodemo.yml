@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print name
-        run: scho username ${{ inputs.username }}
+        run: echo username ${{ inputs.username }}
