@@ -1,0 +1,25 @@
+name: Test Repository Dispatch
+on:
+  repository_dispatch:
+
+  workflow_dispatch:
+    outputs:
+      firstword:
+        description: "The first output string"
+        value: ${{ jobs.print-username.outputs.output1 }}
+      secondword:
+        description: "The second output string"
+        value: ${{ jobs.print-username.outputs.output2 }}
+ 
+jobs:
+ abc:
+  runs-on: ubuntu-latest
+  outputs:
+      output1: ${{ steps.step1.outputs.firstword }}
+      output2: ${{ steps.step2.outputs.secondword }}
+  steps:
+  - run: echo "hello world"
+  - id: step1
+        run: echo "firstword=hello" >> $GITHUB_OUTPUT
+      - id: step2
+        run: echo "secondword=world" >> $GITHUB_OUTPUT
