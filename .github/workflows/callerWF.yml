@@ -7,3 +7,10 @@ jobs:
     uses: ./.github/workflows/workflowcall.yml
     with:
       username: 'hellop'
+      
+  job2:
+    runs-on: ubuntu-latest
+    needs: callworkflow
+    steps:
+      - run: echo ${{ needs.callworkflow.outputs.firstword }} ${{ needs.callworkflow.outputs.secondword }}
+    
