@@ -1,0 +1,14 @@
+on:
+  workflow_call:
+    inputs:
+      username:
+        description: 'username passed from workflow'
+        default: 'jon'
+        required: false
+        type: string
+jobs:
+  printusername:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print name
+        run: scho username ${{ inputs.username }}
