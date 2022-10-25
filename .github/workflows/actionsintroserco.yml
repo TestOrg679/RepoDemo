@@ -1,8 +1,9 @@
 on:
   workflow_dispatch
   
-  jobs:
-    exploregithubactions:
+jobs:
+  
+  exploregithubactions:
     runs-on: ubuntu-latest
     steps:
       - run: echo " ${{ github.event_name }} event."
