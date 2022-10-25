@@ -1,0 +1,14 @@
+on:
+  workflow_dispatch
+  
+  jobs:
+    exploregithubactions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo " ${{ github.event_name }} event."
+      - run: echo " ${{ runner.os }} event."
+      - run: echo " ${{ github.ref }} event."
+      - run: echo " ${{ github.repository }} event."
+      - run: echo " ${{ job.status }} event."
+      
+      
