@@ -8,6 +8,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v3
+      - uses: actions/checkout@v3
       - name: run a oneline script
         run: echo hello world !!
