@@ -2,6 +2,6 @@ on:
   workflow_dispatch:
 jobs:
   callworkflow:
-    uses: ./github/workflows/reusablesercodemo.yml
+    uses: ./.github/workflows/reusablesercodemo.yml
     with:
       username: 'hellouser'
