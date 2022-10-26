@@ -1,0 +1,21 @@
+on:
+  workflow_dispatch:
+jobs:
+  calljob1:
+    uses: githubabcs/gh-abcs-actions/.github/workflows/greet-everyone.yml@main
+    with:
+      name: 'reusable template job1'
+      
+  calljob2:
+    uses: githubabcs/gh-abcs-actions/.github/workflows/super-linter.yml@main
+    with:
+      name: 'reusable template job2'
+      
+  calljob3:
+    needs: calljob1
+    uses: githubabcs/gh-abcs-actions/.github/workflows/github-actions-demo.yml@main
+  calljob4:
+    needs: calljob2    
+    uses: ./.github/workflows/reusableflow.yml
+  
+      
