@@ -1,6 +1,6 @@
 on:
   workflow_dispatch:
-jobs:
+jobs:  
   callworkflow:
     uses: ./.github/workflows/sercocalledWFdemomain.yml
     with:
@@ -9,4 +9,4 @@ jobs:
     runs-on: windows-latest
     needs: callworkflow
     steps:
-      - run: echo ${{ needs.callworkflow.outputs.firstword }} ${{ needs.callworkflow.outputs.secondword }}
+      - run: echo ${{ needs.callworkflow.outputs }} 
