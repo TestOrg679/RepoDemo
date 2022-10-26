@@ -1,0 +1,12 @@
+on:
+  workflow_dispatch:
+jobs:
+  callworkflow:
+    uses: ./.github/workflows/sercocalledWFdemomain.yml
+    with:
+      username: 'hellothere'
+  job2:
+    runs-on: ubuntu-latest
+    needs: callworkflow
+    steps:
+      - run: echo ${{ needs.callworkflow.outputs.firstword }} ${{ needs.callworkflow.outputs.firstword }}
