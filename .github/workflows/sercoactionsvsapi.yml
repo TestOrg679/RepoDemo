@@ -17,4 +17,4 @@ jobs:
             - with  github **Markdown** :sparkles:
             - created by [ create-or-update-comment][1]
             [1]: https://github.com/peter-evans/create-or-update-comment
-          reactins: '+1'  
+          reactions: '+1'  
