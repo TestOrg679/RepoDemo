@@ -8,9 +8,7 @@ jobs:
       
   calljob2:
     uses: githubabcs/gh-abcs-actions/.github/workflows/super-linter.yml@main
-    with:
-      name: 'reusable template job2'
-      
+          
   calljob3:
     needs: calljob1
     uses: githubabcs/gh-abcs-actions/.github/workflows/github-actions-demo.yml@main
