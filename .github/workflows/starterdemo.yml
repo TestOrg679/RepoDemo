@@ -74,10 +74,8 @@ jobs:
         uses: docker://alpine:3.8
         
       - uses: docker://ghcr.io/wulfland/container-demo:latest
-      
-      - name: Display documentation
-        run: tree
-        working-directory: docs
+     
+     
   
   job_2:
     runs-on: ubuntu-latest
