@@ -60,7 +60,7 @@ jobs:
     if: ${{github.ref == 'refs/heads/main' && github.event.inputs.loglevel == 'debug' }}
     steps:
       - name: Expressions
-        if: contains(github.ref, 'main)'
+        if: contains(github.ref, 'main')
         run: echo '${{ toJSON(github) }}'
       
      
