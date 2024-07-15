@@ -58,7 +58,13 @@ jobs:
     runs-on: ubuntu-latest
     needs: [job_2, job_3]
     steps:
-      - run: echo "status ${{ job.status }}"
+      - name: github context
+        run: echo '${{ toJSON(github) }}'
+      - name: job context
+        run: echo '${{ toJSON(job) }}'
+      - name: runner context
+        run: echo '${{ toJSON(runner) }}'
+     
       
       
          
