@@ -1,0 +1,23 @@
+name: Concepts workflow
+on:  
+  workflow_dispatch:
+    inputs:
+      homedrive: 
+        description: 'home drive on the machine'
+        required: true
+        default: '/home'
+      loglevel:
+        description:  'log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - error
+      run_matrix:
+        description: 'run the matrix job'
+        required: true
+        type: boolean
+ 
+      
