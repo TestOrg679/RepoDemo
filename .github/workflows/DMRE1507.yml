@@ -1,5 +1,10 @@
 on:
-  workflow_dispatch
+  push:
+    branches:
+    - main
+    - dev/*
+    - release/*
+  
 jobs:
   test:
     runs-on: ubuntu-latest
