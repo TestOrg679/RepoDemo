@@ -56,12 +56,13 @@ jobs:
       - run: echo "status ${{ job.services }}"
   job_4:
     runs-on: ubuntu-latest
-    needs: [job_2, job_3]
-    if: ${{github.ref == 'refs/heads/main' && github.event.inputs.loglevel == 'debug' }}
+    needs: [job_2, job_3]    
     steps:
-      - name: Expressions
-        if: contains(github.ref, 'main')
-        run: echo '${{ toJSON(github) }}'
+      - name: set time        
+        run: echo 'my_time=$(date)' >> $GITHUB_OUTPUT
+        id: set-time
+      - name: output time
+        run: echo "it was ${{steps.set-time.outputs.my_time}} in the previous step"
       
      
       
