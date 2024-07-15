@@ -1,28 +1,53 @@
-name: Concepts workflow
-on:  
+name: Concepts Workflow
+
+on:
+  # Webhook events
+  push:
+    branches: 
+      - 'release/*'
+    paths-ignore: 
+      - '.github/workflows'
+
+
+  # Manual events
   workflow_dispatch:
     inputs:
-      homedrive: 
-        description: 'home drive on the machine'
+      homedrive:
+        description: 'The home drive on the machine'
         required: true
         default: '/home'
-      loglevel:
-        description:  'log level'
+      logLevel:
+        description: 'Log level'
         required: true
-        default: 'warning'
+        default: 'warning' 
         type: choice
         options:
         - info
         - warning
-        - error
+        - debug 
       run_matrix:
-        description: 'run the matrix job'
-        required: true
-        type: boolean
-  jobs:
-    job_1:
-      runs-on: ubuntu-latest
-      steps:
-        - run: echo 'concepts' 
- 
+        description: 'Run the matrix jobs'
+        required: true 
+        type: boolean 
+      environment:
+        description: 'Environment to run tests against'
+        type: text
+        required: true 
+        default: 'Dev'        
+
+
+jobs:
+  job_1:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - run: echo "🎉 The job was triggered by a ${{ github['event_name'] }} event."
+      - run: echo "🏠 drive is `${{ github.event.inputs.homedrive }}`."
+         
       
+      
+      
+  
+
+          
+ 
