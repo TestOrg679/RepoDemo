@@ -1,0 +1,14 @@
+on:
+  workflow_dispatch:
+jobs:
+  callworkflow:
+    uses: ./.github/workflows/DMREwfcall.yml
+    with:
+      username: 'hellop'
+  job2:
+    runs-on: ubuntu-latest
+    needs: callworkflow
+    steps:
+      - run: echo ${{ needs.callworkflow.outputs.firstword }}
+      
+  
