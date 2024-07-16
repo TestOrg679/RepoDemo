@@ -1,0 +1,25 @@
+on:
+  workflow_call:
+    inputs:
+      username:
+        description: 'username'
+        default: 'john'
+        required: false
+        type: string
+    outputs:
+      firstword:
+        description: 'first word'
+        value: ${{ jobs.print-username.outputs.output1}}
+jobs:
+  print-username:
+    runs-on: ubuntu-latest
+    outputs:
+      output1: $ {{ steps.step1.outputs.firstword}}
+    steps:
+      - id: step1
+        run: echo "firstword=hello" >> $ GITHUB_OUTPUT
+
+    
+    
+
+    
