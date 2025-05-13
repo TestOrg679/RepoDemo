@@ -1,0 +1,19 @@
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: azure/login@v1
+      with:
+        client-id: 'c6fe2bdb-92dc-4b1f-aba7-b9b29bddc3e7'
+        tenant-id: 'a0ebdaba-d630-497d-bd41-73534878f3ca'
+        subscription-id: '9f64891c-88e8-4651-83e3-58000743cd9f'
+        client-secret: ${{ secrest.KEYVAULTSECRET}}           
+    - uses: Azure/get-keyvault-secrets@v1.0
+      id: azurekeyvault
+      with:
+        keyvault: "kv-gwu72je4akl7g"
+        SecretName1: "AZURE-COSMOS-CONNECTION-STRING"          
+    - name: Use Secret
+      run: echo "My secret is ${{ steps.azurekeyvault.outputs.SecretName1 }}"
+    
