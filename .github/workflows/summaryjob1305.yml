@@ -1,0 +1,27 @@
+on: workflow_dispatch
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ':rocket:' >> GITHUB_STEP_SUMMARY
+      - run: echo ':medal_sports:' >> GITHUB_STEP_SUMMARY
+      - run: echo '<h1> great feature </h1>' >> GITHUB_STEP_SUMMARY
+  jobs2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: write summary for action
+        uses: actions/github-script@v6.1.0
+        with:
+          script: |
+            await core.summary
+            .addHeading('test results')
+            .addTable([
+              [{data: 'File', header: true},{data: 'Result', header: true}
+              [{'foo.js', 'Pass'}],
+              [{'bar.js', 'Fail'}],
+              [{'test.js', 'Pass'}]
+              ])
+              .addLink('view staging deployment','https://github.com')
+              .write()
+      
+      
