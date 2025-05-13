@@ -16,7 +16,7 @@ jobs:
             await core.summary
             .addHeading('test results')
             .addTable([
-              [{data: 'File', header: true},{data: 'Result', header: true}
+              [{data: 'File', header: true},{data: 'Result', header: true}]
               [{'foo.js', 'Pass'}],
               [{'bar.js', 'Fail'}],
               [{'test.js', 'Pass'}]
