@@ -1,13 +1,12 @@
 on:
-  push:
-    branches:
-    - main
-    - dev
-    - release
+  workflow_dispatch
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: run a one line script
-        run: echo hello, world!
+      - run: echo " the job was triggered by ${{ github.event_name }} event"
+      - run: echo " the job is ruuning on ${{ runner.os }} server hosted by github"
+      - run: echo " the name of the branch ${{ github.ref }} and your repository is ${{ github.repository }}"
+      - name: adding markdown
+        run: echo "hello world ! :rocket:" >> $GITHUB_STEP_SUMMARY
+      
