@@ -1,0 +1,10 @@
+name: NR github context demo
+on:
+  workflow_dispatch:
+jobs:
+  explorecontext:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "the job was triggred by a ${{github.event_name}}"
+      
+  
