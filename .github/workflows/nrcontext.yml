@@ -6,5 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "the job was triggred by a ${{github.event_name}}"
+      - run: echo "the job is running on a ${{runner.os}}"
+      - run: echo "the name of the branch is ${{github.ref}} and the repo is ${{github.repository}}"
       
   
