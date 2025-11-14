@@ -1,0 +1,12 @@
+name: FRGitHub context demo
+on:
+  workflow_dispatch:
+
+
+jobs:
+  explorecontext:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo the job was triggered by ${{github.event_name}}
+    - run: echo the job is running on ${{runner.os}}
+    - run: echo name of the branch ${{github.ref}}
