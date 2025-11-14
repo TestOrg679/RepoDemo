@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: run a script
-        run: push event !
+        run: echo push event !
